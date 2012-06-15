@@ -1,0 +1,13 @@
+<f:layout name="Default" />
+
+<f:section name="Content">
+	<h2>Edit Todo</h2>
+
+	<f:render partial="FormErrors" arguments="{object: Todo}" />
+
+	<f:form action="update" name="todo" object="{todo}" >
+		<f:render partial="Todo/FormFields" arguments="{todo:todo}" />
+
+		<f:form.submit class="btn btn-primary" value="Save Todo" />
+	</f:form>
+</f:section>

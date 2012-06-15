@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-06-23T10:33:23Z" product-name="busynoggin_todos">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_busynoggintodos_domain_model_todo">
+				<source>Todo</source>
+			</trans-unit>
+			<trans-unit id="tx_busynoggintodos_domain_model_todo.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_busynoggintodos_domain_model_todo.done">
+				<source>Done</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

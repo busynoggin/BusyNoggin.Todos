@@ -1,0 +1,14 @@
+plugin.tx_busynoggintodos {
+	view {
+		# cat=plugin.tx_busynoggintodos/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:busynoggin_todos/Resources/Private/Templates/
+		# cat=plugin.tx_busynoggintodos/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:busynoggin_todos/Resources/Private/Partials/
+		# cat=plugin.tx_busynoggintodos/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:busynoggin_todos/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_busynoggintodos//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+}

@@ -1,0 +1,31 @@
+<f:flashMessages severity="OK" as="flashMessages">
+	<div class="alert alert-block alert-success">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<p>{flashMessage}</p>
+		</f:for>
+	</div>
+</f:flashMessages>
+
+<f:flashMessages severity="Error" as="flashMessages">
+	<div class="alert alert-block alert-error">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<p>{flashMessage}</p>
+		</f:for>
+	</div>
+</f:flashMessages>
+
+<f:flashMessages severity="Warning" as="flashMessages">
+	<div class="alert alert-block">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<p>{flashMessage}</p>
+		</f:for>
+	</div>
+</f:flashMessages>
+
+<f:flashMessages severity="Notice" as="flashMessages">
+	<div class="alert alert-block alert-info">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<p>{flashMessage}</p>
+		</f:for>
+	</div>
+</f:flashMessages>

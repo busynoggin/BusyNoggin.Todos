@@ -1,0 +1,33 @@
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+
+	<ul class="todos">
+		<f:for each="{todos}" as="todo">
+			<li>
+				<f:form action="update" name="todo" object="{todo}">
+					<f:form.hidden name="todo[done]" value="" />
+					<f:form.checkbox property="done" value="1"/>
+					<f:if condition="{todo.done}">
+						<f:then>
+							<del>{todo.description}</del>
+						</f:then>
+						<f:else>
+							<f:link.action action="edit" arguments="{todo : todo}"> {todo.description}</f:link.action>
+							<div class="pull-right">
+								<f:link.action class="btn btn-mini btn-danger" action="delete" arguments="{todo : todo}">
+									<i class="icon icon-white icon-trash"></i> Delete
+								</f:link.action>
+							</div>
+						</f:else>
+					</f:if>
+				</f:form>
+			</li>
+		</f:for>
+	</ul>
+
+	<f:link.action class="btn btn-primary" action="new">
+		<i class="icon icon-white icon-plus"></i> Add Todo
+	</f:link.action>
+</f:section>
