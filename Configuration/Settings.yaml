@@ -1,0 +1,6 @@
+TYPO3:
+  TYPO3CR:
+    contentTypes:
+      'BusyNoggin.Todos:Plugin':
+        superTypes: ['TYPO3.TYPO3:Plugin']
+        label: 'Busy Noggin Todos Plugin'

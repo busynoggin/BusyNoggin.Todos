@@ -1,0 +1,6 @@
+prototype(BusyNoggin.Todos:Plugin) < prototype(TYPO3.TYPO3:PluginRenderer)
+prototype(BusyNoggin.Todos:Plugin) {
+	package = 'BusyNoggin.Todos'
+	controller = 'Todo'
+	action = 'index'
+}
