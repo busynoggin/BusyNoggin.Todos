@@ -1,16 +1,21 @@
 <?php
+namespace BusyNoggin\Todos\Domain\Model;
+
+use TYPO3\FLOW3\Annotations as FLOW3;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * A Todo
  *
+ * @FLOW3\Entity
  */
-class Tx_BusynogginTodos_Domain_Model_Todo extends Tx_Extbase_DomainObject_AbstractEntity {
+class Todo {
 
 	/**
 	 * Item description
 	 *
 	 * @var string
-	 * @validate NotEmpty
+	 * @FLOW3\Validate(type="NotEmpty")
 	 */
 	protected $description;
 

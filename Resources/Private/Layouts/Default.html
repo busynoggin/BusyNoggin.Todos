@@ -1,3 +1,77 @@
-<div class="tx-busynoggin-todos">
-	<f:render section="Content" />
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>FLOW3 Todos</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link href="{f:uri.resource(path: 'StyleSheets/bootstrap.min.css')}" rel="stylesheet">
+	<link href="{f:uri.resource(path: 'StyleSheets/bootstrap-responsive.min.css')}" rel="stylesheet">
+	<link href="{f:uri.resource(path: 'StyleSheets/todos.css')}" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/jquery.min.js')}"></script>
+	<script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/bootstrap.min.js')}"></script>
+	<script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/todos.js')}"></script>
+
+
+	<style type="text/css">
+		/* Override some defaults */
+		html, body {
+			background-color: #ccc;
+		}
+		body {
+			padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+		}
+		.container {
+			width: 820px;
+		}
+
+		/* The white background content wrapper */
+		.container > .content {
+			background-color: #fff;
+			padding: 20px;
+			margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+			-webkit-border-radius: 0 0 6px 6px;
+			   -moz-border-radius: 0 0 6px 6px;
+					border-radius: 0 0 6px 6px;
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+			   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+					box-shadow: 0 1px 2px rgba(0,0,0,.15);
+		}
+
+		/* Page header tweaks */
+		.page-header {
+			background-color: #f5f5f5;
+			padding: 20px 20px 10px;
+			margin: -20px -20px 20px;
+		}
+	</style>
+  </head>
+
+  <body>
+
+	<div class="container">
+		<div class="content">
+			<div class="page-header">
+				<h1>FLOW3 Todos</h1>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<f:render section="Content" />
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>&copy; Busy Noggin 2012</p>
+		</footer>
+	</div>
+
+  </body>
+</html>

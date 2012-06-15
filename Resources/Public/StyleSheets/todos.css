@@ -1,0 +1,15 @@
+ul.todos {
+	margin-left: 0;
+}
+
+ul.todos li {
+	list-style: none;
+}
+
+ul.todos li .btn {
+	display: none;
+}
+
+ul.todos li:hover .btn {
+	display: block;
+}

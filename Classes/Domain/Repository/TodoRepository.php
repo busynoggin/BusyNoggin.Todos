@@ -1,10 +1,14 @@
 <?php
+namespace BusyNoggin\Todos\Domain\Repository;
+
+use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
  * A repository for Todos
  *
+ * @FLOW3\Scope("singleton")
  */
-class Tx_BusynogginTodos_Domain_Repository_TodoRepository extends Tx_Extbase_Persistence_Repository {
+class TodoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 
 }
 ?>

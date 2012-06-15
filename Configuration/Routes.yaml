@@ -1,0 +1,9 @@
+-
+  name: 'General Actions'
+  uriPattern:    '({@action})'
+  defaults:
+    '@package':    'BusyNoggin.Todos'
+    '@controller': 'Todo'
+    '@action':     'index'
+    '@format':     'html'
+  appendExceedingArguments: true

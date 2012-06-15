@@ -1,15 +1,18 @@
 <?php
+namespace BusyNoggin\Todos\Controller;
+
+use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
- * Todo controller for the busynoggin_todos extension
+ * Todo controller for the BusyNoggin.Todos package
+ *
+ * @FLOW3\Scope("singleton")
  */
-class Tx_BusynogginTodos_Controller_TodoController extends Tx_Extbase_MVC_Controller_ActionController {
+class TodoController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
-	 * todoRepository
-	 *
-	 * @var Tx_BusynogginTodos_Domain_Repository_TodoRepository
-	 * @inject
+	 * @FLOW3\Inject
+	 * @var \BusyNoggin\Todos\Domain\Repository\TodoRepository
 	 */
 	protected $todoRepository;
 
@@ -26,13 +29,13 @@ class Tx_BusynogginTodos_Controller_TodoController extends Tx_Extbase_MVC_Contro
 	/**
 	 * action new
 	 *
-	 * @param tx_busynoggintodos_domain_model_todo$newTodo
-	 * @dontvalidate $newTodo
+	 * @param \BusyNoggin\Todos\Domain\Model\Todo $newTodo
+	 * @FLOW3\IgnoreValidation("$newTodo")
 	 * @return void
 	 */
-	public function newAction(Tx_BusynogginTodos_Domain_Model_Todo $newTodo = NULL) {
+	public function newAction(\BusyNoggin\Todos\Domain\Model\Todo $newTodo = NULL) {
 		if ($newTodo == NULL) {
-			$newTodo = t3lib_div::makeInstance('Tx_BusynogginTodos_Domain_Model_Todo');
+			$newTodo = new \BusyNoggin\Todos\Domain\Model\Todo();
 		}
 		$this->view->assign('newTodo', $newTodo);
 	}
@@ -40,48 +43,49 @@ class Tx_BusynogginTodos_Controller_TodoController extends Tx_Extbase_MVC_Contro
 	/**
 	 * action create
 	 *
-	 * @param tx_busynoggintodos_domain_model_todo $newTodo
+	 * @param \BusyNoggin\Todos\Domain\Model\Todo $newTodo
 	 * @return void
 	 */
-	public function createAction(Tx_BusynogginTodos_Domain_Model_Todo $newTodo) {
+	public function createAction(\BusyNoggin\Todos\Domain\Model\Todo $newTodo) {
 		$this->todoRepository->add($newTodo);
-		$this->flashMessageContainer->add('Your new Todo was created.');
+		$this->flashMessageContainer->addMessage(new \TYPO3\FLOW3\Error\Message('Your new Todo was created.'));
 		$this->redirect('index');
 	}
 
 	/**
 	 * action edit
 	 *
-	 * @param tx_busynoggintodos_domain_model_todo $todo
+	 * @param \BusyNoggin\Todos\Domain\Model\Todo $todo
 	 * @return void
 	 */
-	public function editAction(Tx_BusynogginTodos_Domain_Model_Todo $todo) {
+	public function editAction(\BusyNoggin\Todos\Domain\Model\Todo $todo) {
 		$this->view->assign('todo', $todo);
 	}
 
 	/**
 	 * action update
 	 *
-	 * @param tx_busynoggintodos_domain_model_todo $todo
+	 * @param \BusyNoggin\Todos\Domain\Model\Todo $todo
 	 * @return void
 	 */
-	public function updateAction(Tx_BusynogginTodos_Domain_Model_Todo $todo) {
+	public function updateAction(\BusyNoggin\Todos\Domain\Model\Todo $todo) {
 		$this->todoRepository->update($todo);
-		$this->flashMessageContainer->add('Your Todo was updated.');
+		$this->flashMessageContainer->addMessage(new \TYPO3\FLOW3\Error\Message('Your Todo was updated.'));
 		$this->redirect('index');
 	}
 
 	/**
 	 * action delete
 	 *
-	 * @param tx_busynoggintodos_domain_model_todo $todo
+	 * @param \BusyNoggin\Todos\Domain\Model\Todo $todo
 	 * @return void
 	 */
-	public function deleteAction(Tx_BusynogginTodos_Domain_Model_Todo $todo) {
+	public function deleteAction(\BusyNoggin\Todos\Domain\Model\Todo $todo) {
 		$this->todoRepository->remove($todo);
-		$this->flashMessageContainer->add('Your Todo was removed.');
+		$this->flashMessageContainer->addMessage(new \TYPO3\FLOW3\Error\Message('Your Todo was removed.'));
 		$this->redirect('index');
 	}
 
 }
+
 ?>
