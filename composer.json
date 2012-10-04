@@ -1,0 +1,14 @@
+{
+    "name": "busynoggin/todos",
+    "type": "flow3-package",
+    "description": "",
+    "version": "0.0.1",
+    "require": {
+        "typo3/flow3": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "BusyNoggin\\Todos": "Classes"
+        }
+    }
+}
